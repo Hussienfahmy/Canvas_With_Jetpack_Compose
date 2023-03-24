@@ -3,7 +3,6 @@ package com.h_fahmy.composecanvas
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.h_fahmy.composecanvas.screens.ShapeClickerGame
 import com.h_fahmy.composecanvas.ui.theme.ComposeCanvasTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +10,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeCanvasTheme(darkTheme = false) {
-                WeightScaleScreen()
+
             }
         }
     }
