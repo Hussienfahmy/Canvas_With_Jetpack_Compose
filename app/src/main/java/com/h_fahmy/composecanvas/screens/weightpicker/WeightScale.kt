@@ -185,8 +185,11 @@ fun WeightScale(
             )
 
             // draw text number for only TenStep lines
-            if (lineType is LineType.TenStep) {
-                val textRadius = outerRadius - lineLength - 5.dp.toPx() - style.textSize.toPx()
+            if (lineType is LineType.TenStep || lineType is LineType.FiveStep) {
+                val textSize = if (lineType is LineType.FiveStep) style.textSize.toPx() / 2
+                else style.textSize.toPx()
+
+                val textRadius = outerRadius - lineLength - 5.dp.toPx() - textSize
                 val x = textRadius * cos(angleInRad) + circleCenter.x
                 val y = textRadius * sin(angleInRad) + circleCenter.y
 
@@ -201,7 +204,7 @@ fun WeightScale(
                             x,
                             y,
                             Paint().apply {
-                                textSize = style.textSize.toPx()
+                                this.textSize = textSize
                                 textAlign = Paint.Align.CENTER
                             }
                         )
