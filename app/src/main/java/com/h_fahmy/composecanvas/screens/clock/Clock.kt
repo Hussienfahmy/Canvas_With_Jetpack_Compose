@@ -12,11 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.unit.dp
+import com.ramcosta.composedestinations.annotation.Destination
 import kotlinx.coroutines.delay
 import java.time.LocalDateTime
 import kotlin.math.cos
 import kotlin.math.sin
 
+@Destination
 @Composable
 fun ClockScreen() {
     Box(modifier = Modifier.fillMaxSize()) {

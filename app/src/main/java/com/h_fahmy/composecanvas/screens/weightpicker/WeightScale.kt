@@ -23,8 +23,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.withRotation
+import com.ramcosta.composedestinations.annotation.Destination
 import kotlin.math.*
 
+@Destination
 @Composable
 fun WeightScaleScreen(modifier: Modifier = Modifier) {
     Box(

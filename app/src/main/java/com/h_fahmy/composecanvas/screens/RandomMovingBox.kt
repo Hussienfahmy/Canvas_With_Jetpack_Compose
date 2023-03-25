@@ -12,10 +12,12 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.input.pointer.pointerInput
+import com.ramcosta.composedestinations.annotation.Destination
 import kotlin.random.Random
 
+@Destination
 @Composable
-fun RandomMovingBox() {
+fun RandomMovingBoxScreen() {
     BoxWithConstraints {
         val boxSize = Size(300f, 300f)
 

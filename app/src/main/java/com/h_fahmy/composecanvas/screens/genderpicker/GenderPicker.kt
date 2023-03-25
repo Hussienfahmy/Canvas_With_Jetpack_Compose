@@ -4,6 +4,8 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -16,16 +18,35 @@ import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.graphics.vector.PathParser
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.h_fahmy.composecanvas.R
+import com.h_fahmy.composecanvas.extenstions.netgrid.displayNetGrid
+import com.ramcosta.composedestinations.annotation.Destination
+
+@Destination
+@Composable
+fun GenderPickerScreen(
+    modifier: Modifier = Modifier,
+    maleGradient: List<Color> = listOf(Color(0xFF6D6DFF), Color.Blue),
+    femaleGradient: List<Color> = listOf(Color(0xFFEA76FF), Color.Magenta),
+) {
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .displayNetGrid()) {
+        GenderPicker(
+            modifier.fillMaxSize(),
+            maleGradient,
+            femaleGradient,
+            onGenderSelected = {}
+        )
+    }
+}
 
 @Composable
 fun GenderPicker(
     modifier: Modifier = Modifier,
     maleGradient: List<Color> = listOf(Color(0xFF6D6DFF), Color.Blue),
     femaleGradient: List<Color> = listOf(Color(0xFFEA76FF), Color.Magenta),
-    distanceBetweenGenders: Dp = 50.dp,
+    distanceBetweenGenders: Float = 100f,
     pathScaleFactor: Float = 9f,
     onGenderSelected: (Gender) -> Unit
 ) {
@@ -88,12 +109,12 @@ fun GenderPicker(
         center = this.center
 
         maleTranslationOffset = Offset(
-            x = center.x - malePathBounds.width * pathScaleFactor - distanceBetweenGenders.toPx() / 2,
+            x = center.x - malePathBounds.width * pathScaleFactor - distanceBetweenGenders / 2,
             y = center.y - malePathBounds.height * pathScaleFactor / 2
         )
 
         femaleTranslationOffset = Offset(
-            x = center.x + distanceBetweenGenders.toPx() / 2,
+            x = center.x + distanceBetweenGenders / 2,
             y = center.y - femalePathBounds.height * pathScaleFactor / 2
         )
 

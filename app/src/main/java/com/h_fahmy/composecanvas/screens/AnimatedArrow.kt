@@ -15,8 +15,10 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.h_fahmy.composecanvas.extenstions.netgrid.displayNetGrid
+import com.ramcosta.composedestinations.annotation.Destination
 import kotlin.math.atan2
 
+@Destination
 @Composable
 fun AnimatedArrow() {
     val pathProgress = remember {

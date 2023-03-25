@@ -14,11 +14,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
+import com.ramcosta.composedestinations.annotation.Destination
 import kotlinx.coroutines.delay
 import kotlin.math.pow
 import kotlin.math.sqrt
 import kotlin.random.Random
 
+@Destination
 @Composable
 fun ShapeClickerGame() {
     var points by remember { mutableStateOf(0) }
