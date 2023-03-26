@@ -55,7 +55,7 @@ fun ScreenItem(
             Text(
                 modifier = Modifier.align(Alignment.Center),
                 text = title,
-                style = MaterialTheme.typography.h3
+                style = MaterialTheme.typography.h4
             )
         }
     }
@@ -87,6 +87,10 @@ data class Item(
 )
 
 private val items = listOf(
+    Item(
+        title = "Academic Grades",
+        destination = AcademicGradeSelectorScreenDestination
+    ),
     Item(
         title = "Clock",
         destination = ClockScreenDestination
