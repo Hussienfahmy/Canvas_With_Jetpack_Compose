@@ -16,7 +16,8 @@ The course is taught by Philipp Lackner, who has over 11 years of experience in 
 
 ## Video Demo
 
-[Click here](media/app_demo.mp4) to play the video demo.
+https://user-images.githubusercontent.com/65970301/227927804-a6722756-0b10-4883-aa40-8cbbc64a8ba4.mp4
+
 
 ## Certificate
 
